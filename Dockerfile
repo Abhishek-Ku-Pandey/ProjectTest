@@ -1,3 +1,11 @@
-From openjdk:8
-copy ./target/employee-producer-0.0.1-SNAPSHOT.jar employee-producer-0.0.1-SNAPSHOT.jar
-CMD ["java","-jar","employee-producer-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8u201-jdk-alpine3.9
+
+MAINTAINER Abhishek P:andey "abhi@gmail.com"
+
+WORKDIR /opt
+
+COPY naming-server-0.0.1-SNAPSHOT.jar ./
+
+EXPOSE 80:8761
+
+CMD ["java", "-jar", "naming-server-0.0.1-SNAPSHOT.jar"]

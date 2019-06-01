@@ -1,0 +1,5 @@
+
+docker image build -t naming .
+
+
+docker container run -it -p 80:8761 -v /home/ashu/logs:/tmp/logs naming
